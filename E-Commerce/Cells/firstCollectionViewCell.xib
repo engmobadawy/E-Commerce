@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="firstCollectionViewCell" id="gTV-IL-0wX" customClass="firstCollectionViewCell" customModule="task2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="244" height="230"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="244" height="230"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector_1" translatesAutoresizingMaskIntoConstraints="NO" id="6cc-HB-dad">
+                        <rect key="frame" x="111.5" y="102.5" width="21" height="25"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="6cc-HB-dad" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="k9B-0l-Bp1"/>
+                <constraint firstItem="6cc-HB-dad" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="tXV-wY-oiM"/>
+            </constraints>
+            <size key="customSize" width="244" height="230"/>
+            <connections>
+                <outlet property="icon" destination="6cc-HB-dad" id="t5c-K9-xAK"/>
+            </connections>
+            <point key="canvasLocation" x="115.94202898550725" y="127.90178571428571"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Vector_1" width="21" height="25"/>
+    </resources>
+</document>

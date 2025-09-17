@@ -87,11 +87,10 @@ class TabBarVC: UITabBarController {
     }
 
     // comment: temporary placeholders so it runs now
-    final class HomeVC: UIViewController { override func viewDidLoad(){ super.viewDidLoad(); view.backgroundColor = .systemBackground; title = "Home" } }
-    final class FavoriteVC: UIViewController { override func viewDidLoad(){ super.viewDidLoad(); view.backgroundColor = .systemBackground; title = "Favorite" } }
-    final class CartVC: UIViewController { override func viewDidLoad(){ super.viewDidLoad(); view.backgroundColor = .systemBackground; title = "Cart" } }
-    final class ProfileVC: UIViewController { override func viewDidLoad(){ super.viewDidLoad(); view.backgroundColor = .systemBackground; title = "Profile" } }
-
+    
+    
+    
+    
         
         
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
