@@ -202,6 +202,15 @@ final class FavoriteVC: UIViewController {
         FavoriteItem(image: UIImage(named: "Vector_1"), name: "Apple W-series 6", price: 45000, isFavorited: true),
         FavoriteItem(image: UIImage(named: "Vector_1"), name: "Siberia 800", price: 45000, isFavorited: false),
         FavoriteItem(image: UIImage(named: "Vector_1"), name: "Lycra Men's shirt", price: 45000, isFavorited: true),
+        FavoriteItem(image: UIImage(named: "Vector_1"), name: "Nike/L v Airforce 1", price: 45000, isFavorited: false),
+        FavoriteItem(image: UIImage(named: "Vector_1"), name: "Siberia 800", price: 45000, isFavorited: false),
+        FavoriteItem(image: UIImage(named: "Vector_1"), name: "Lycra Men's shirt", price: 45000, isFavorited: true),
+        FavoriteItem(image: UIImage(named: "Vector_1"), name: "Nike/L v Airforce 1", price: 45000, isFavorited: false),
+        FavoriteItem(image: UIImage(named: "Vector_1"), name: "Siberia 800", price: 45000, isFavorited: false),
+        FavoriteItem(image: UIImage(named: "Vector_1"), name: "Lycra Men's shirt", price: 45000, isFavorited: true),
+        FavoriteItem(image: UIImage(named: "Vector_1"), name: "Nike/L v Airforce 1", price: 45000, isFavorited: false),
+        FavoriteItem(image: UIImage(named: "Vector_1"), name: "Siberia 800", price: 45000, isFavorited: false),
+        FavoriteItem(image: UIImage(named: "Vector_1"), name: "Lycra Men's shirt", price: 45000, isFavorited: true),
         FavoriteItem(image: UIImage(named: "Vector_1"), name: "Nike/L v Airforce 1", price: 45000, isFavorited: false)
     ]
 

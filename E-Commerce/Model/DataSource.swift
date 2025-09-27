@@ -66,7 +66,7 @@ class DataSource: NSObject {
 
             return Product(
                 id: "\(baseName.lowercased())-\(i)",
-                name: "\(baseName) \(i)",
+                name: "\(baseName) \(i)  pppppppppppppppppppppppppppppp-",
                 subtitle: baseSubtitle,
                 image: image,
                 price: price,

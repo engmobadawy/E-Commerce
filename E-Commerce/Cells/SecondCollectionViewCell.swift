@@ -22,7 +22,6 @@ class SecondCollectionViewCell: UICollectionViewCell {
         largeView.layer.cornerRadius = 15
         outImage.layer.cornerRadius = 15
         
-        //
         
     }
 

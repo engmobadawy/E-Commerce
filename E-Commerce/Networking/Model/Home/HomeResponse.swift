@@ -5,9 +5,11 @@
 //  Created by MohamedBadawi on 19/08/2025.
 //
 
-
 //
-//  HomeResponse.swift
+// HomeResponse.swift
+// E-CommerceAppLoginPage
+//
+// Created by MohamedBadawi on 19/08/2025.
 //
 
 import Foundation
@@ -52,12 +54,15 @@ struct HomeFeatured: Codable {
     let tax: Int
     let offerId: Int?
     let offerTitle: String
+    let offerType: Int           // ✅ Added this
+    let offerDiscountType: Int   // ✅ Added this
+    let offerDiscountValue: Int  // ✅ Added this
     let offerPrice: String
     let isFavorite: Int
     let isCart: Int
     let rateAvg: String
     let rateCount: Int
-
+    
     enum CodingKeys: String, CodingKey {
         case id, image, name, price, tax
         case subCategoryId = "sub_category_id"
@@ -65,6 +70,9 @@ struct HomeFeatured: Codable {
         case requiresPrescription = "requires_prescription"
         case offerId = "offer_id"
         case offerTitle = "offer_title"
+        case offerType = "offer_type"               // ✅ Added this
+        case offerDiscountType = "offer_discount_type"   // ✅ Added this
+        case offerDiscountValue = "offer_discount_value" // ✅ Added this
         case offerPrice = "offer_price"
         case isFavorite = "is_favorite"
         case isCart = "is_cart"

@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		04FAF9722E7DF765000B4576 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 04FAF9712E7DF765000B4576 /* SwiftKeychainWrapper */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		040F75582E76F7FD00F2F54C /* E-Commerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-Commerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FAF9722E7DF765000B4576 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = "E-Commerce";
 			packageProductDependencies = (
+				04FAF9712E7DF765000B4576 /* SwiftKeychainWrapper */,
 			);
 			productName = "E-Commerce";
 			productReference = 040F75582E76F7FD00F2F54C /* E-Commerce.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 040F754F2E76F7FD00F2F54C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				04FAF9702E7DF765000B4576 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 040F75592E76F7FD00F2F54C /* Products */;
 			projectDirPath = "";
@@ -339,6 +348,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04FAF9702E7DF765000B4576 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04FAF9712E7DF765000B4576 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FAF9702E7DF765000B4576 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 040F75502E76F7FD00F2F54C /* Project object */;
 }

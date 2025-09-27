@@ -6,7 +6,7 @@
 //
 
 
-import SwiftUI
+import UIKit
 
 protocol FontNameProtocol {
   var fontName: String { get }
@@ -58,10 +58,10 @@ extension UIButton {
 }
 extension UIView{
     //MARK:- storyBoard additions features for view
-    @IBInspectable var cornerRadius: CGFloat {
-        get { return layer.cornerRadius }
-        set { layer.cornerRadius = newValue; layer.masksToBounds = newValue > 0 }
-    }
+//    @IBInspectable var cornerRadius: CGFloat {
+//        get { return layer.cornerRadius }
+//        set { layer.cornerRadius = newValue; layer.masksToBounds = newValue > 0 }
+//    }
     
     @IBInspectable var borderColor: UIColor {
         get { return UIColor(cgColor: layer.borderColor!) }

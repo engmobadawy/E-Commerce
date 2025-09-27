@@ -14,8 +14,7 @@ class firstCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        self.layer.cornerRadius = 10
+       
         contentView.layer.cornerRadius = 10
         contentView.layer.backgroundColor = UIColor(resource: .grayF2F2F2).cgColor
         icon.tintColor = .black.withAlphaComponent(0.4)

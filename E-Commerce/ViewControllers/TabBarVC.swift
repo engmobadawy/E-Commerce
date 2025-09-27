@@ -11,29 +11,43 @@ class TabBarVC: UITabBarController {
 
     let customTabBarView: UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = UIColor.white
         view.layer.cornerRadius = 20
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        //since shadows are drawn outside the view’s frame and would be clipped if masksToBounds were true.
         view.layer.masksToBounds = false
+        
+        // Adjust shadow for smaller screens
+        let shadowOpacity: Float = UIScreen.main.bounds.height <= 667 ? 0.08 : 0.12
+        let shadowRadius: CGFloat = UIScreen.main.bounds.height <= 667 ? 8.0 : 10.0
+        
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: -8.0)
-        view.layer.shadowOpacity = 0.12
-        view.layer.shadowRadius = 10.0
+        view.layer.shadowOpacity = shadowOpacity
+        view.layer.shadowRadius = shadowRadius
         return view
     }()
 
-        override func viewDidLoad()
-        {
-            super.viewDidLoad()
-            setupTabbar()
-            addCustomTabBarView()
-            tabbarDesignSetup()
-        }
-    override func viewDidLayoutSubviews(){
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupTabbar()
+        addCustomTabBarView()
+        tabbarDesignSetup()
+        configureTabBarForDevice()
+    }
+    
+    override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        tabBar.frame.size.height = 90
-        tabBar.frame.origin.y = view.frame.height - 90
+        
+        // Calculate adaptive height based on device
+        let tabBarHeight: CGFloat
+        if UIScreen.main.bounds.height <= 667 { // iPhone SE, iPhone 8 and smaller
+            tabBarHeight = 65
+        } else {
+            tabBarHeight = 90
+        }
+        
+        tabBar.frame.size.height = tabBarHeight
+        tabBar.frame.origin.y = view.frame.height - tabBarHeight
         customTabBarView.frame = tabBar.frame
     }
     
@@ -48,17 +62,35 @@ class TabBarVC: UITabBarController {
         tabBar.contentMode = .center
         tabBar.center = view.center
         tabBar.unselectedItemTintColor = .black.withAlphaComponent(0.5)
-        tabBar.frame.size.height = CGFloat(70)
-        tabBar.frame.origin.y = view.frame.height - CGFloat(70)
         tabBar.isTranslucent = true
         tabBar.layer.masksToBounds = true
         tabBar.layer.cornerRadius = 20
         tabBar.layer.borderWidth = 0.1
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-
-        
     }
+    
+    private func configureTabBarForDevice() {
+        // Adjust font size for smaller devices
+        let fontSize: CGFloat = UIScreen.main.bounds.height <= 667 ? 10 : 12
         
+        for item in tabBar.items ?? [] {
+            item.setTitleTextAttributes([
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)
+            ], for: .normal)
+            
+            item.setTitleTextAttributes([
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize, weight: .medium)
+            ], for: .selected)
+        }
+        
+        // Adjust image insets for better spacing on small screens
+        if UIScreen.main.bounds.height <= 667 {
+            for item in tabBar.items ?? [] {
+                item.imageInsets = UIEdgeInsets(top: -2, left: 0, bottom: 2, right: 0)
+                item.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 2)
+            }
+        }
+    }
     
     // TabBarVC.swift
     private func setupTabbar() {
@@ -74,7 +106,7 @@ class TabBarVC: UITabBarController {
                                            selectedImage: nil)
 
         let cart = UINavigationController(rootViewController: CartVC())
-        cart.tabBarItem = UITabBarItem(title: "Cart",
+        cart.tabBarItem = UITabBarItem(title: "My cart",
                                        image: UIImage(named: "cart"),
                                        selectedImage: nil)
 
@@ -83,24 +115,19 @@ class TabBarVC: UITabBarController {
                                           image: UIImage(named: "profile"),
                                           selectedImage: nil)
 
-        viewControllers = [home, favorite, cart, profile] // comment: assign tabs
+        viewControllers = [home, favorite, cart, profile]
     }
-
-    // comment: temporary placeholders so it runs now
     
-    
-    
-    
-        
-        
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         // Find and sort UIControl subviews (representing tab bar buttons)
         let tabBarButtonViews = tabBar.subviews
             .filter { $0 is UIControl }
             .sorted { $0.frame.minX < $1.frame.minX }
+        
         // Find the index of the selected item
         guard let index = tabBar.items?.firstIndex(of: item),
               tabBarButtonViews.indices.contains(index) else { return }
+        
         // Find the image view in the selected tab bar button
         let tabBarButton = tabBarButtonViews[index]
         if let imageView = tabBarButton.subviews.compactMap({ $0 as? UIImageView }).first {
@@ -124,17 +151,12 @@ class TabBarVC: UITabBarController {
             }
         )
     }
-
-    }
-
-
-
+}
 
 extension TabBarVC {
     
-    func hideMainTabBar(isHidden:Bool){
+    func hideMainTabBar(isHidden: Bool) {
         tabBar.isHidden = isHidden
         customTabBarView.isHidden = isHidden
     }
 }
-
