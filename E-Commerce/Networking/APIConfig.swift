@@ -10,7 +10,7 @@ import Foundation
 
 
 struct APIConfig {
-    static let baseURL =  "https://backend.outletplus.sa/api/"
+    static let baseURL =  "https://backend.outletplus.sa/"
 }
 
 protocol TargetType {
